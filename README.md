@@ -65,7 +65,7 @@ We won't take garbage. That being said as of right now our standards are rather 
 * NEVER, under ANY circumstances, use the following tags:
   * FONT
   * CENTER
-* Keep any visual information in CSS, preferably in 'style.css' or the <style> tag at the top of the page.
+* Keep any visual information in CSS, preferably in 'style.css' or the STYLE tag at the top of the page.
 * Keep HTML as a description of the contents of the document, not how it looks.
 * If creating a new page, use the templates provided in /templates.
 
