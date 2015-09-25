@@ -38,7 +38,7 @@ There's a lot of other cool things you can do with git, but those are the basics
 
 Due to some weird Javascript and orgainzational stuff going on, you'll probably want to run a web server on your computer and view it from that. Thankfully, that is a stupidly easy process.
 
-1. Install Python 3.x from http://python.com
+1. Install Python 3.x from http://python.org/downloads/
 2. Open a Command Prompt window and use 'dir' and 'cd' to navigate to where the website is located.
 3. Run the command 'python -m http.server'. This will start python's built in web server.
 4. Open a web browser and navigate to 'http://localhost:8000'. The website will appear.
