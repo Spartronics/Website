@@ -61,7 +61,7 @@ We won't take garbage. That being said as of right now our standards are rather 
 * DO NOT COMMIT VIDEOS TO THIS REPOSITORY. Upload them to Youtube and either embed it or place it's link in the gallery JSON.
 
 ###HTML
-* Make sure the page validates on http://validator.w3c.org. Failure to validate will cause the page to not work on some browsers, which will be bad.
+* Make sure the page validates on http://validator.w3.org. Failure to validate will cause the page to not work on some browsers, which will be bad.
 * NEVER, under ANY circumstances, use the following tags:
   * FONT
   * CENTER
