@@ -2,97 +2,128 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Spartronics - Home</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<!-- Set the title that appears in the website's tab and in search results here. -->
+		<title>About - Spartronics</title>
+		
+		<!-- Enter the relative path to the website's root here. (One ../ for every folder level down. -->
+		<base href="../" />
+		
 		<link href="style.css" rel="stylesheet">
-		<script src=".\scripts\gallery.js"></script>
+		
+		<!-- This is the gallery script. -->
+		<script src="scripts/gallery.js"></script>
+		<!-- There are multiple init scripts. Uncomment only one and remove the others. -->
+		
+		<!-- Single gallery
+		
 		<script>
+		window.onload = function(){
 			Gallery1 = new Gallery(
-				"./images/home/list.json",
-				"./images/home/",
-				"viewer1",
-				"select1"
+				"viewer1",                	//ID of div containing large image
+				null,                     	//ID of div containing thumbnails (leave null if using autoscroller)
+				null,                     	//Keep null
+				"./images/home/list.json",	//path to JSON file containing gallery data
+				"./images/home/"          	//folder containing images
 			);
 			
+			 //Number is autoscroll interval in milliseconds. Delete this line if not autoscrolling.
 			setInterval("Gallery1.ScrollUp()", 5000);
-			
-			
-			/*CreateGallery(
-				"viewer1",                  	//ID of gallery's viewer (big picture)
-				"select1",                  	//ID of gallery's selector
-				"./images/home/list.json",	//path to JSON file containing gallery data
-				"./images/home/"         	//folder containing images
-			);*/
+		}
 		</script>
+		
+		-->
+		
+		<!-- Useful CSS for a low-profile banner scroller (use with above if wanted)
+		
+		<style type="text/css">
+			article .viewer img{max-height: 30vh; max-width: 100%}
+			article .viewer{padding: 0; margin: 0; height: auto; overflow: visible;}
+		</style>
+		
+		-->
+		
+		<!-- Script for multiple galleries in one viewing area
+		
+		<script>
+		window.onload = function(){
+		
+			var Paths = [
+				{
+					id: "btn2014", //ID of HTML object to be clicked on to change galleries
+					gallery: "images/gallery/2014.json", //Location of gallery descriptor
+					image: "images/gallery/2014/" //Location of images
+				},
+				{
+					id: "btn2015",
+					gallery: "images/gallery/2015.json",
+					image: "images/gallery/2014/"
+				}
+				//Continue as needed
+			];
+			
+			Gallery1 = new Gallery(
+				"viewer1", //ID of HTML div to display pictures in.
+				"select1", //ID of HTML div to show thmubnails in.
+				Paths //Variable where picture paths are stored. (Defined above.)
+			);
+			
+			//Set the initial gallery contents to the first gallery.
+			Gallery1.ChangePaths(Paths[0].gallery, Paths[0].image);
+			
+			//Make the gallery switch buttons defined in Paths work.
+			InitSelectButtons(Paths, Gallery1);
+		}
+		</script>
+		-->
+		
 	</head>
 	<body>
 		<header>
-			<h1>5048 Spartronics</h1>
+			<h1>Spartronics</h1>
+			<p>FRC Team 5048 from Imlay City, MI</p>
 		</header>
 		<nav>
-			<a href=".\" class="home">
-				<div class="icon">&#xf15a;</div>
-				<!-- Home -->
-			</a>
-			<a href=".\TeamHub\">
-				<div class="icon">&#xf1a6;</div>
-				Team Hub
-			</a>
-			<a href=".\TeamHub\Calendars">
-				<div class="icon">&#xf124;</div>
-				Calendar
-			</a>
-			<a href=".\About\">
-				<div class="icon">&#xf200;</div>
-				About
-			</a>
-			<a href=".\Gallery\" class="active">
-				<div class="icon">&#xf195;</div>
-				Gallery
-			</a>
-			<a href=".\Sponsors\">
-				<div class="icon">&#xf1fc;</div>
-				Sponsors
-			</a>
-			<a href=".\Contact\">
-				<div class="icon">&#xf16d;</div>
-				Contact
-			</a>
-			<a href=".\Links\">
-				<div class="icon">&#xf165;</div>
-				Links
-			</a>
+			<a href="./" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
+			<!-- On the currently selected tab, set the class to "active". This makes the tab white. -->
+			<a href="TeamHub/" class="active"><div class="icon">&#xf1a6;</div> Team Hub </a>
+			<a href="Calendars"><div class="icon">&#xf124;</div> Calendar </a>
+			<a href="About/"><div class="icon">&#xf200;</div> About </a>
+			<a href="Gallery/"><div class="icon">&#xf195;</div> Gallery </a>
+			<a href="Sponsors/"><div class="icon">&#xf1fc;</div> Sponsors </a>
+			<a href="Links/"><div class="icon">&#xf165;</div> Links </a>
 		</nav>
-		
+
+		<!-- Delete this nav unless using multiple galleries init script. -->
 		<nav class="subnav">
-			<a href="#" class="active">2014</a>
-			<a href="#">2015</a>
-			<a href="#">2016</a>
+			<a href="javascript:void(0);" class="active" id="btn2014">2014</a>
+			<a href="javascript:void(0);" id="btn2015">2015</a>
 		</nav>
 
 		<article>
-		<p>
-			<div class="viewer" id="viewer1">
+			<!-- Delete the "viewtab" class to invert background colors -->
+			<div class="viewer viewtab" id="viewer1">
 				<noscript>Please enable Javascript to view the gallery.</noscript>
 			</div>
 			
-			<div class="select" id="select1">
+			<!-- Delete this div if using autoscroller -->
+			<!-- Delete the "selecttab" class to invert background colors -->
+			<div class="select selecttab" id="select1">
 			</div>
-		
-		</p> <p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			Quisque eu odio libero. Nunc vitae enim sed magna euismod iaculis.
-			Suspendisse tempus nisl eu ipsum aliquam, non porta nulla eleifend.
-			Sed ultricies ante nec velit bibendum, at facilisis enim facilisis.
-			Duis volutpat massa lacus, et mollis ipsum molestie eu. Proin eu nulla libero.
-			Donec ligula leo, efficitur quis iaculis id, eleifend et orci.
-			Nunc pharetra, turpis et aliquet convallis, dui leo fringilla leo,
-			convallis interdum nisl nunc eget urna. Cras lobortis odio eleifend,
-			fringilla purus at, viverra tellus. Mauris ac vulputate leo, eu interdum tortor.
-			Nulla eu finibus sem, non pulvinar lectus. Vivamus at sollicitudin ligula.
-			Nunc vitae quam lacinia, tempor dui auctor, commodo metus. 
-			Morbi laoreet lectus ac justo cursus venenatis. 
-			Quisque luctus velit sed dui malesuada, sit amet eleifend nisi aliquam. 
-		</p>
-		</article>	
+						
+			<p>The galleries have their pictures, thumbnails, descriptions and titles defined in a .JSON file. <br />
+				Copy one from /images somewhere and edit it; I'm not going to write it out here. <br />
+				Unlike everything else on the site, paths here are relative to the .JSON, not to the website root.
+			</p>
+			
+			<h2>JSON attributes</h2>
+			<ul>
+				<li>"title": The title that appears above the image. Can be left out, but if you do, try to keep the same among all the pictures.</li>
+				<li>"desc": The text that appears below the image. Keep short. Entirely optional.</li>
+				<li>"thumb": Thumbnail shown on the select bar. Mandatory unless autoscrolling.</li>
+				<li>"pic": The picture to display. Mandatory.</li>
+			</ul>
+		</article>
 	</body>
 </html>

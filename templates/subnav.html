@@ -2,54 +2,55 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Spartronics - Home</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<!-- Set the title that appears in the website's tab and in search results here. -->
+		<title>About - Spartronics</title>
+		
+		<!-- Enter the relative path to the website's root here. (One ../ for every folder level down. -->
+		<base href="../" />
+		
 		<link href="style.css" rel="stylesheet">
 	</head>
 	<body>
 		<header>
-			<h1>5048 Spartronics</h1>
+			<h1>Spartronics</h1>
+			<p>FRC Team 5048 from Imlay City, MI</p>
 		</header>
 		<nav>
-			<a href=".\" class="home">
-				<div class="icon">&#xf15a;</div>
-				<!-- Home -->
-			</a>
-			<a href=".\TeamHub\">
-				<div class="icon">&#xf1a6;</div>
-				Team Hub
-			</a>
-			<a href=".\TeamHub\Calendars">
-				<div class="icon">&#xf124;</div>
-				Calendar
-			</a>
-			<a href=".\About\">
-				<div class="icon">&#xf200;</div>
-				About
-			</a>
-			<a href=".\Gallery\" class="active">
-				<div class="icon">&#xf195;</div>
-				Gallery
-			</a>
-			<a href=".\Sponsors\">
-				<div class="icon">&#xf1fc;</div>
-				Sponsors
-			</a>
-			<a href=".\Contact\">
-				<div class="icon">&#xf16d;</div>
-				Contact
-			</a>
-			<a href=".\Links\">
-				<div class="icon">&#xf165;</div>
-				Links
-			</a>
+			<a href="./" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
+			<!-- On the currently selected tab, set the class to "active". This makes the tab white. -->
+			<a href="TeamHub/" class="active"><div class="icon">&#xf1a6;</div> Team Hub </a>
+			<a href="Calendars"><div class="icon">&#xf124;</div> Calendar </a>
+			<a href="About/"><div class="icon">&#xf200;</div> About </a>
+			<a href="Gallery/"><div class="icon">&#xf195;</div> Gallery </a>
+			<a href="Sponsors/"><div class="icon">&#xf1fc;</div> Sponsors </a>
+			<a href="Links/"><div class="icon">&#xf165;</div> Links </a>
 		</nav>
-		<nav class="subnav">
-			<a href="#" class="active">2014 </a>
-			<a href="#">2015 </a>
-			<a href="#">2016 </a>
-		</nav>
-		<article>
 		
-		</article>	
+		<!--
+			This is the subnavigation bar.
+		
+			Edit, add, and remove links as needed. Do not add anything else. 
+			
+			If you wish to add an icon, add a div of class "icon" and
+			download the Foundation Icons set and look up the hex code
+			in the "preview.html" included with it.
+		-->
+		<nav class="subnav">
+			<!-- On the currently selected tab, set the class to "active". This makes the tab white. -->
+			<a href="test/1" class="active">Subpage 1</a>
+			<a href="test/2">Subpage 2</a>
+			<a href="test/3">Subpage 3</a>
+			<a href="test/4">Subpage 4</a>
+			<a href="test/5">Subpage 5</a>
+		</nav>
+
+		<article>
+			<p>Here is where you place the website's content.
+				Except where marked, do not edit anything else.
+				Also remove the comments when you are done.
+			</p>
+		</article>
 	</body>
 </html>
