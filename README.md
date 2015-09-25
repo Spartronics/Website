@@ -14,7 +14,7 @@ To get Git running and download the site's files:
 3. Run 'git config --global user.name "YOUR USERNAME"
 4. Run 'git config --global user.email "YOUR EMAIL ADDRESS"
 5. Use 'ls' and 'cd' to navigate to where you'd like to place the website files.
-6. Use 'md' to make a folder to place the website in.
+6. Use 'mkdir' to make a folder to place the website in.
 7. Use 'cd' to enter that folder.
 8. Run 'git clone https://github.com/Spartronics/Website.git' to copy the site to that folder.
 
