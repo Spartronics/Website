@@ -79,11 +79,12 @@ nav a {
 	width: 120px;
 	margin: 0px;
 	margin-left: -7px;
+	margin-right: 7px;
 	margin-top: 0px;
 	text-align: center;
 	background: #0C2032;
 	color: white;
-	border: 1px solid black;
+	border: 0px solid black;
 	border-bottom: none;
 	text-decoration: none;
 }
@@ -185,7 +186,7 @@ article .viewer p{
 }
 
 article .select{
-	background: #666666;
+	background: #0C2032;
 	max-width: 100%;
 	padding: 4px;
 	display: block;
@@ -247,4 +248,5 @@ hr {background-color: #dddddd; width: 80%; border: 1;}
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
 	text-decoration: inherit;
+	padding-right: 8px;
 }

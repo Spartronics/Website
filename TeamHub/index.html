@@ -4,8 +4,9 @@
 		<meta charset="utf-8" />
 		<title>Team Hub - Spartronics</title>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-		<link href="../style.css" rel="stylesheet">
-		<meta HTTP-EQUIV="REFRESH" content="0; url=./Reminders"> <!-- Default page. -->
+		<base href="../" />
+		<link href="style.css" rel="stylesheet">
+		<meta HTTP-EQUIV="REFRESH" content="0; url=./Reminders"><!--  Default page. -->
 	</head>
 	<body>
 		<header>
@@ -13,26 +14,28 @@
 			<p>FRC Team 5048 from Imlay City, MI</p>
 		</header>
 		<nav>
-			<a href="../" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
-			<a href="../TeamHub/" class="active"><div class="icon">&#xf1a6;</div>         	Team Hub</a>
-			<a href="../Calendars"><div class="icon">&#xf124;</div>	Calendar</a>
-			<a href="../About/"><div class="icon">&#xf200;</div>           	About</a>
-			<a href="../Gallery/"><div class="icon">&#xf195;</div>         	Gallery</a>
-			<a href="../Sponsors/"><div class="icon">&#xf1fc;</div>        	Sponsors</a>
-			<a href="../Links/"><div class="icon">&#xf165;</div>           	Links</a>
+			<a href="./" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
+			<a href="TeamHub/" class="active"><div class="icon">&#xf1a6;</div>         	Team Hub</a>
+			<a href="Calendars"><div class="icon">&#xf124;</div>	Calendar</a>
+			<a href="About/"><div class="icon">&#xf200;</div>           	About</a>
+			<a href="Gallery/"><div class="icon">&#xf195;</div>         	Gallery</a>
+			<a href="Sponsors/"><div class="icon">&#xf1fc;</div>        	Sponsors</a>
+			<a href="Links/"><div class="icon">&#xf165;</div>           	Links</a>
 		</nav>
 		
 		<nav class="subnav">
-			<a href="./Reminders">Reminders</a>
-			<a href="./Meetings">Meeting Logs</a>
-			<a href="./Forms/">Forms</a>
-			<a href="./contactinfo.pdf"><div class="icon">&#xf16a;</div> Team Contact</a>
+			<a href="TeamHub/Reminders">Reminders</a>
+			<a href="TeamHub/Meetings">Meeting Logs</a>
+			<a href="TeamHub/Forms/">Forms</a>
+			<!-- TODO: Replace this with something a bit more maintainable. Also tell people the password. -->
+			<a href="TeamHub/contactinfo.pdf"><div class="icon">&#xf16a;</div> Team Contact</a>
 		</nav>
-		
+		<article>
 		<!--
 			Intentionally blank.
 			Serves as navigation if redirect breaks on certain browsers,
 			and a loading animation otherwise. 
 		-->
+		</article>
 	</body>
 </html>

@@ -4,7 +4,8 @@
 		<meta charset="utf-8" />
 		<title>Calendar - Spartronics</title>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-		<link href="../style.css" rel="stylesheet">
+		<base href="../" />
+		<link href="style.css" rel="stylesheet">
 		<style>
 			iframe {
 				width: 90%;
@@ -18,21 +19,27 @@
 			<h1>Spartronics</h1>
 			<p>FRC Team 5048 from Imlay City, MI</p>
 		</header>
+		
 		<nav>
-			<a href="../" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
-			<a href="../TeamHub/"><div class="icon">&#xf1a6;</div>         	Team Hub</a>
-			<a href="../TeamHub/Calendars" class="active"><div class="icon">&#xf124;</div>	Calendar</a>
-			<a href="../About/"><div class="icon">&#xf200;</div>           	About</a>
-			<a href="../Gallery/"><div class="icon">&#xf195;</div>         	Gallery</a>
-			<a href="../Sponsors/"><div class="icon">&#xf1fc;</div>        	Sponsors</a>
-			<a href="../Links/"><div class="icon">&#xf165;</div>           	Links</a>
+			<a href="./" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
+			<a href="TeamHub/"><div class="icon">&#xf1a6;</div>Team Hub</a>
+			<a href="Calendars/" class="active"><div class="icon">&#xf124;</div>Calendar</a>
+			<a href="About/"><div class="icon">&#xf200;</div>About</a>
+			<a href="Gallery/"><div class="icon">&#xf195;</div>Gallery</a>
+			<a href="Sponsors/"><div class="icon">&#xf1fc;</div>Sponsors</a>
+			<a href="Links/"><div class="icon">&#xf165;</div>Links</a>
 		</nav>
 
 		<article>
+		<!-- TODO: Replace iframe with some sort of calendar scraper.
+			This takes a lot of work. Good summer project?
+			I'd recommend trying to scrape the .ICAL file, myself. Easy syntax.
+		-->
+		
 		<!-- Note: this entire page is just one bad practice on top of another. -->
-		<center> <!-- NEVER do this -->
-		<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=spartronics01%40gmail.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style=" border-width:0 " frameborder="0" scrolling="no"></iframe>
+		<center> <!-- Please don't do this. This was my only option. -->
+			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=spartronics01%40gmail.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style=" border-width:0 " frameborder="0" scrolling="no"></iframe>
 		</center>
-		</article>
+		</article> 
 	</body>
 </html>
