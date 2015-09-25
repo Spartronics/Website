@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Gallery - Spartronics</title>
+		<meta name="viewport" content="width=320, initial-scale=1">
+		<base href="../" />
+		<link href="style.css" rel="stylesheet">
+		<script src="scripts/gallery.js"></script>
+		<script>
+		window.onload = function(){ //Don't start anything until the body is ready
+			var Paths = [
+				{
+					id: "btn2014",
+					gallery: "images/gallery/2014.json",
+					image: "images/gallery/2014/"
+				},
+				{
+					id: "btn2015",
+					gallery: "images/gallery/2015.json",
+					image: "images/gallery/2014/"
+				}
+			];
+			
+			Gallery1 = new Gallery("viewer1", "select1", Paths);
+			
+			Gallery1.ChangePaths(Paths[0].gallery, Paths[0].image);
+			InitSelectButtons(Paths, Gallery1);
+		}
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Spartronics</h1>
+			<p>FRC Team 5048 from Imlay City, MI</p>
+		</header>
+		<nav>
+			<a href="./" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
+			<a href="TeamHub/"><div class="icon">&#xf1a6;</div>Team Hub</a>
+			<a href="Calendars"><div class="icon">&#xf124;</div>Calendar</a>
+			<a href="About/"><div class="icon">&#xf200;</div>About</a>
+			<a href="Gallery/" class="active"><div class="icon">&#xf195;</div>Gallery</a>
+			<a href="Sponsors/"><div class="icon">&#xf1fc;</div>Sponsors</a>
+			<a href="Links/"><div class="icon">&#xf165;</div>Links</a>
+		</nav>
+		
+		<nav class="subnav">
+			<a href="javascript:void(0);" class="active" id="btn2014">2014</a>
+			<a href="javascript:void(0);" id="btn2015">2015</a>
+		</nav>
+
+		<article>
+			<div class="viewer viewtab" id="viewer1">
+				<noscript>Please enable Javascript to view the gallery.</noscript>
+			</div>
+			
+			<div class="select selecttab" id="select1">
+			</div>
+		</article>
+	</body>
+</html>

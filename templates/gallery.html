@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Spartronics - Home</title>
+		<link href="style.css" rel="stylesheet">
+		<script src=".\scripts\gallery.js"></script>
+		<script>
+			Gallery1 = new Gallery(
+				"./images/home/list.json",
+				"./images/home/",
+				"viewer1",
+				"select1"
+			);
+			
+			setInterval("Gallery1.ScrollUp()", 5000);
+			
+			
+			/*CreateGallery(
+				"viewer1",                  	//ID of gallery's viewer (big picture)
+				"select1",                  	//ID of gallery's selector
+				"./images/home/list.json",	//path to JSON file containing gallery data
+				"./images/home/"         	//folder containing images
+			);*/
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>5048 Spartronics</h1>
+		</header>
+		<nav>
+			<a href=".\" class="home">
+				<div class="icon">&#xf15a;</div>
+				<!-- Home -->
+			</a>
+			<a href=".\TeamHub\">
+				<div class="icon">&#xf1a6;</div>
+				Team Hub
+			</a>
+			<a href=".\TeamHub\Calendars">
+				<div class="icon">&#xf124;</div>
+				Calendar
+			</a>
+			<a href=".\About\">
+				<div class="icon">&#xf200;</div>
+				About
+			</a>
+			<a href=".\Gallery\" class="active">
+				<div class="icon">&#xf195;</div>
+				Gallery
+			</a>
+			<a href=".\Sponsors\">
+				<div class="icon">&#xf1fc;</div>
+				Sponsors
+			</a>
+			<a href=".\Contact\">
+				<div class="icon">&#xf16d;</div>
+				Contact
+			</a>
+			<a href=".\Links\">
+				<div class="icon">&#xf165;</div>
+				Links
+			</a>
+		</nav>
+		
+		<nav class="subnav">
+			<a href="#" class="active">2014</a>
+			<a href="#">2015</a>
+			<a href="#">2016</a>
+		</nav>
+
+		<article>
+		<p>
+			<div class="viewer" id="viewer1">
+				<noscript>Please enable Javascript to view the gallery.</noscript>
+			</div>
+			
+			<div class="select" id="select1">
+			</div>
+		
+		</p> <p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Quisque eu odio libero. Nunc vitae enim sed magna euismod iaculis.
+			Suspendisse tempus nisl eu ipsum aliquam, non porta nulla eleifend.
+			Sed ultricies ante nec velit bibendum, at facilisis enim facilisis.
+			Duis volutpat massa lacus, et mollis ipsum molestie eu. Proin eu nulla libero.
+			Donec ligula leo, efficitur quis iaculis id, eleifend et orci.
+			Nunc pharetra, turpis et aliquet convallis, dui leo fringilla leo,
+			convallis interdum nisl nunc eget urna. Cras lobortis odio eleifend,
+			fringilla purus at, viverra tellus. Mauris ac vulputate leo, eu interdum tortor.
+			Nulla eu finibus sem, non pulvinar lectus. Vivamus at sollicitudin ligula.
+			Nunc vitae quam lacinia, tempor dui auctor, commodo metus. 
+			Morbi laoreet lectus ac justo cursus venenatis. 
+			Quisque luctus velit sed dui malesuada, sit amet eleifend nisi aliquam. 
+		</p>
+		</article>	
+	</body>
+</html>

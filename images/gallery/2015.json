@@ -1,0 +1,20 @@
+[
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "3.jpg",
+		"thumb": "3thumb.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "On the Arch",
+		"img": "2.jpg",
+		"thumb": "2thumb.jpg",
+		"desc": "Some members of the Spartronics visit the top of the St. Louis Arch during their World's competition."
+	},
+	{
+		"title": "Cheering at Worlds",
+		"img": "1.jpg",
+		"thumb": "1thumb.jpg",
+		"desc": "The Spartronics cheer in the crowd at the excellent performance of their robot."
+	}
+]
