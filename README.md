@@ -19,6 +19,7 @@ To get Git running and download the site's files:
 8. Run 'git clone https://github.com/Spartronics/Website.git' to copy the site to that folder.
 
 You will probably want to update your copy of the website on a regular basis. To update files:
+
 1. Open a bash window and navigate to where the site is
 2. Run 'git pull origin master'
 
