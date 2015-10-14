@@ -1,20 +1,188 @@
 [
 	{	
+		"title": "Building",
+		"img": "build01.jpg",
+		"thumb": "thumbs/build01.jpg",
+		"desc": "Mentors Mark Flowers and Don Heeke cut out wood while team members watch."
+	},
+	{	
+		"title": "Taking Care of Buisness",
+		"img": "build02.jpg",
+		"thumb": "thumbs/build02.jpg",
+		"desc": "Micheal Brown works on the year's Chairman video while Austin Pankey takes care of buisness stuff."
+	},
+	{	
+		"title": "Discussions",
+		"img": "build03.jpg",
+		"thumb": "thumbs/build03.jpg",
+		"desc": "Mrs. Hubbard discusses buisness with Charles Rickman and Curtis Campbell."
+	},
+	{	
+		"title": "Productivity",
+		"img": "build06.jpg",
+		"thumb": "thumbs/build06.jpg",
+		"desc": "Everyone's building and programming."
+	},
+	{	
+		"title": "Deep Thought",
+		"img": "build08.jpg",
+		"thumb": "thumbs/build08.jpg",
+		"desc": "Programmers Cody Hubbard and Aaron Hancock are busy working on the robot's code."
+	},
+	{	
+		"title": "Stackie Chan",
+		"img": "build09.jpg",
+		"thumb": "thumbs/build09.jpg",
+		"desc": "Stackie Chan is ready for testing."
+	},
+	{	
+		"title": "Celebration",
+		"img": "states01.jpg",
+		"thumb": "thumbs/states01.jpg",
+		"desc": "Donald Heeke, Curtis Campbell and Justin Campbell celebrate a great victory."
+	},
+	{	
+		"title": "Stackie is Proud",
+		"img": "states02.jpg",
+		"thumb": "thumbs/states02.jpg",
+		"desc": "Stackie looks at all he's accomplished."
+	},
+	{	
+		"title": "Cheering",
+		"img": "states04.jpg",
+		"thumb": "thumbs/states04.jpg",
+		"desc": "The team cheers for their robot in the stands."
+	},
+	{	
+		"title": "Namesake",
+		"img": "states05.jpg",
+		"thumb": "thumbs/states05.jpg",
+		"desc": "Stackie Chan does what he does best: stacking."
+	},
+	{	
+		"title": "Score",
+		"img": "states06.jpg",
+		"thumb": "thumbs/states06.jpg",
+		"desc": "The stack is being placed. Hope it doesn't fall over!"
+	},
+	{	
+		"title": "Concentration",
+		"img": "states08.jpg",
+		"thumb": "thumbs/states08.jpg",
+		"desc": "Drivers Curtis and Justin Campbell are in the zone while human player Micheal Brown is waiting to insert totes."
+	},
+	{	
+		"title": "Victory",
+		"img": "states09.jpg",
+		"thumb": "thumbs/states09.jpg",
+		"desc": "The drive team celebrates their sucess with much yelling."
+	},
+	{	
 		"title": "Stackie Chan's Debut",
-		"img": "3.jpg",
-		"thumb": "3thumb.jpg",
+		"img": "troy01.jpg",
+		"thumb": "thumbs/troy01.jpg",
+		"desc": "The team receives ."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "troy02.jpg",
+		"thumb": "thumbs/troy02.jpg",
 		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
 	},
 	{	
-		"title": "On the Arch",
-		"img": "2.jpg",
-		"thumb": "2thumb.jpg",
-		"desc": "Some members of the Spartronics visit the top of the St. Louis Arch during their World's competition."
+		"title": "Stackie Chan's Debut",
+		"img": "waterford01.jpg",
+		"thumb": "thumbs/waterford01.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
 	},
-	{
-		"title": "Cheering at Worlds",
-		"img": "1.jpg",
-		"thumb": "1thumb.jpg",
-		"desc": "The Spartronics cheer in the crowd at the excellent performance of their robot."
+		{	
+		"title": "Stackie Chan's Debut",
+		"img": "waterford02.jpg",
+		"thumb": "thumbs/waterford02.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "waterford03.jpg",
+		"thumb": "thumbs/waterford03.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "waterford04.jpg",
+		"thumb": "thumbs/waterford04.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "waterford05.jpg",
+		"thumb": "waterford05.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds02.jpg",
+		"thumb": "thumbs/worlds02.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds03.jpg",
+		"thumb": "thumbs/worlds03.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds04.jpg",
+		"thumb": "thumbs/worlds04.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds05.jpg",
+		"thumb": "thumbs/worlds05.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds09.jpg",
+		"thumb": "thumbs/worlds09.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds10.jpg",
+		"thumb": "thumbs/worlds10.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds11.jpg",
+		"thumb": "thumbs/worlds11.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds12.jpg",
+		"thumb": "thumbs/worlds12.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds13.jpg",
+		"thumb": "thumbs/worlds13.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds14.jpg",
+		"thumb": "thumbs/worlds14.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
+	},
+	{	
+		"title": "Stackie Chan's Debut",
+		"img": "worlds15.jpg",
+		"thumb": "thumbs/worlds15.jpg",
+		"desc": "Stackie Chan makes his debut appearance at the Waterford competition."
 	}
 ]
