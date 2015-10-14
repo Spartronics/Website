@@ -30,7 +30,8 @@ To edit files and upload them:
 3. Update the site's files with 'git pull origin master'
 4. Edit the files as you normally would with your favorite HTML (or whatever) editor
 5. For each file you've edited, type 'git add [FILENAME]'.
-6. Run 'git push origin master'. Type your username and password when prompted.
+6. Run 'git commit -m "DESCRIPTION OF EDITED FILES"' to bundle your edits together for submission.
+7. Run 'git push origin master'. Type your username and password when prompted.
 
 There's a lot of other cool things you can do with git, but those are the basics on getting started.
 

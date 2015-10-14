@@ -6,6 +6,13 @@
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 		<base href="../" />
 		<link href="style.css" rel="stylesheet">
+		<style type="text/css">
+			article .viewer img{max-height: 30vh; max-width: 100%}
+			article .viewer{padding: 0; margin: 0; height: auto; overflow: visible;}
+			.sponsors {padding: 10px; width: 80%; margin: auto; text-align: center;}
+			.sponsors img {height: 45px; display: inline; padding: 10px;}
+			.sponsors a {text-decoration: none;}
+		</style>
 	</head>
 	<body>
 		<header>
@@ -26,6 +33,21 @@
 		<!-- TODO: Add hyperlinks and logos, somehow. Don;t use tables. Bad for mobile. -->
 		<p> We could not exist without our sponsors. Thank you to the following: </p>
 		<p>
+			<div class="sponsors">
+				<a href="http://solidworks.com">
+					<img src="images/sponsors/Solidworks.svg" />
+				</a>
+				<a href="http://www.fcanorthamerica.com/community/Pages/Overview.aspx">
+					<img src="images/sponsors/FCA.jpg" />
+				</a>
+				<a href="http://smcusa.com">
+					<img src="images/sponsors/SMC.svg" />
+				</a>
+				<a href="http://neffautomation.org/">
+					<img src="images/sponsors/NEFF.PNG" />
+				</a>
+			</div>
+			
 			<ul>
 				<li>Michigan Dept. of Education</li>
 				<li>Chrysler Foundation</li>
