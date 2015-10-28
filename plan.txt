@@ -1,11 +1,10 @@
 XHomepage
-	About
-		What we Do
-		Team History
-		Our Robots
-		Awards
+X	About
+X		What we Do
+X		Team History
+X		Our Robots
+X		Awards
 		Off-Season
-		Team pics
 X	Gallery (Pics/Videos)
 		2015
 			Robot Build
@@ -36,7 +35,7 @@ X			Meeting
 			Compos
 			Lunches/etc.
 X		Forms
-		Contact info (offsite, pasword protected)
+X		Contact info (offsite, pasword protected)
 X	Links
 X		-Blue Alliance
 X		-Chief Delphi
