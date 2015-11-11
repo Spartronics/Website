@@ -44,11 +44,14 @@ body > * {
 
 header{
 /*	background: #42586E;*/
-	background: #2C3E50;
+	background: #292929;
 	color: white;
 	text-align: center;
-	padding: 15px;
+	padding: 15px 0px;
 	font-family: 'Orbitron', 'Impact', sans-serif;
+	text-shadow: 0px 0px 35px #BBBBFF;
+	width: 1000px;
+	margin: auto;
 }
 
 h1 {
@@ -64,9 +67,9 @@ header p{
 }
 
 nav {
-	width: 100%;
-	background: #0C2032;
-	margin: 0;
+	width: 1000px;
+	background: #FFCC33;
+	margin: auto;
 	text-align: center;
 	display: flex;
 	flex-flow: row wrap;
@@ -82,9 +85,8 @@ nav a {
 	margin-right: 7px;
 	margin-top: 0px;
 	text-align: center;
-	background: #0C2032;
-	color: white;
-	border: 0px solid black;
+	background: #FFCC33;
+	color: #292929;
 	border-bottom: none;
 	text-decoration: none;
 }
@@ -92,7 +94,7 @@ nav a {
 nav a.active {
 	/*box-shadow: 0 0 3px 3px white;*/
 	background: white;
-	color: #0C2032;
+	color: #FFCC33;
 }
 
 nav a.home{
@@ -137,6 +139,8 @@ article {
 
 @media (max-width: 1000px) {
 	article { width: 100vw;}
+	nav {width: 100vw;}
+	header {width: 100vw;}
 }
 
 h2 {
@@ -160,7 +164,7 @@ article .viewer{
 	max-height: 60vh;
 	padding: 10px 0;
 	text-indent: 0;
-	background: #2C3E50;
+	background: white;
 	color: white;
 	disply: flex;
 	justify-content: center;
