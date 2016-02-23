@@ -1,51 +1,40 @@
 # Spartronics5048.com Github Repository
 
-This is the full contents of spartronics5048.com (or will be, once we upload this and replace the old one.) Team members feel free to edit this site; it will hopefully be automatically synced with the web server once I figure out how to set that up. Outsiders can add suggestions, but keep in mind that there's a good chance we'll reject it if it isn't up to our snuff.
+This is the full contents of spartronics5048.com. Team members feel free to edit this site through here; it will be automatically synced with the web server on the hour. Outsiders can add suggestions via pull request, but keep in mind that there's a good chance we'll reject it if it isn't up to our snuff.
 
 All material, unless otherwise stated, is under copyright of their respective creators. (We may change this in the future to be Creative Commons or the like; it's something we've gotta discuss.)
 
 ##Editing
-While it is totally and 100% possible to edit the site from Github.com, it's the last thing we'd recommend. What you should do is use git to copy the site to your computer and update is automatically.
+#Editing HTML
+It's simple.
 
-To get Git running and download the site's files:
+1. Go to https://github.com/Spartronics/Website
+2. Go to the file you want to edit
+3. Edit that file using the text editor on the site. If you need to edit it offline, follow the instructions for Viewing Offline.
+4. Save your edits. Keep editing other files if you need.
+5. Once done, press Commit and add a comment.
 
-1. Install git from http://git-scm.com/downloads
-2. Open a 'git bash' window
-3. Run 'git config --global user.name "YOUR USERNAME"
-4. Run 'git config --global user.email "YOUR EMAIL ADDRESS"
-5. Use 'ls' and 'cd' to navigate to where you'd like to place the website files.
-6. Use 'mkdir' to make a folder to place the website in.
-7. Use 'cd' to enter that folder.
-8. Run 'git clone https://github.com/Spartronics/Website.git' to copy the site to that folder.
+#Uploading files
+Also simple.
 
-You will probably want to update your copy of the website on a regular basis. To update files:
-
-1. Open a bash window and navigate to where the site is
-2. Run 'git pull origin master'
-
-To edit files and upload them:
-
-1. Get permission from the repository's owners to edit the site (first time only)
-2. Open a bash window and navigate to where the website is.
-3. Update the site's files with 'git pull origin master'
-4. Edit the files as you normally would with your favorite HTML (or whatever) editor
-5. For each file you've edited, type 'git add [FILENAME]'.
-6. Run 'git commit -m "DESCRIPTION OF EDITED FILES"' to bundle your edits together for submission.
-7. Run 'git push origin master'. Type your username and password when prompted.
-
-There's a lot of other cool things you can do with git, but those are the basics on getting started.
+1. Go to https://github.com/Spartronics/Website
+2. Go to the folder you want to upload files to.
+3. Drag the file from your computer to the Gihub page
+4. Add a comment and press Commit.
+5. Make sure the files are linked to from the website. (You'll need to edit the HTML for the page you want to add the link to.)
 
 ##Viewing Offline
 
 Due to some weird Javascript and orgainzational stuff going on, you'll probably want to run a web server on your computer and view it from that. Thankfully, that is a stupidly easy process.
 
+1. Download the site's contents as a zip from the Github page
 1. Install Python 3.x from http://python.org/downloads/
 2. Open a Command Prompt window and use 'dir' and 'cd' to navigate to where the website is located.
 3. Run the command 'python -m http.server'. This will start python's built in web server.
 4. Open a web browser and navigate to 'http://localhost:8000'. The website will appear.
 
 ##Content Guidelines
-We won't take garbage. That being said as of right now our standards are rather low.
+We won't take garbage. That being said as of right now we don't have many standards.
 
 ###Text
 * Use proper grammar.

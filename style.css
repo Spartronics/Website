@@ -150,6 +150,11 @@ article p {
 	text-align: justify;
 }
 
+.alert {
+	text-align: center;
+	background: #FFCC33;
+}
+
 article img{
 	display: block;
 	margin-left: auto;
