@@ -1,17 +1,11 @@
 /* Foundations Icon Font */
-@font-face {
-  font-family: "foundation-icons";
-  src: url("foundation-icons.woff2") format('woff2');
-  src: url("foundation-icons.woff") format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("fonts/foundation/foundation-icons.css");
 
 /* Orbitron Bold 700*/
 @font-face {
 	font-family: 'Orbitron';
-	src: url("orbitron.woff2") format('woff2');
-	src: url("orbitron.woff") format('woff');
+	src: url("fonts/orbitron/orbitron.woff2") format('woff2');
+	src: url("fonts/orbitron/orbitron.woff") format('woff');
 	font-style: normal;
 	font-weight: 700;
 }
