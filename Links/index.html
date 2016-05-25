@@ -7,7 +7,26 @@
 		<base href="../" />
 		<link href="style.css" rel="stylesheet">
 		<style type="text/css">
-			td .icon{font-size: 6em; text-decoration: none;}
+			.link-item{display: block;}
+			.link-container{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+				align-content: center;
+				text-indent: 0;
+			}
+			.link-item img{display: inline; vertical-align: middle; float: left; padding: 10px;}
+			.link-item a{font-weight: bold;}
+			
+			.fi-social-facebook, .fi-social-twitter, .fi-social-youtube, .fi-mail{
+				font-size: 6em; vertical-align: middle; padding: 20px;
+			}
+			.fi-social-facebook{color: #3b5998;}
+			.fi-social-twitter{color: #55acee;}
+			.fi-social-youtube{color: #cd201f;}
+			.fi-mail{color: #212425;}
 		</style>
 	</head>
 	<body>
@@ -16,121 +35,71 @@
 			<p>FRC Team 5048 from Imlay City, MI</p>
 		</header>
 		<nav>
-			<a href="./" class="home"><div class="icon">&#xf15a;</div><!-- Home --></a>
-			<a href="TeamHub/"><div class="icon">&#xf1a6;</div>Team Hub</a>
-			<a href="Calendars"><div class="icon">&#xf124;</div>Calendar</a>
-			<a href="About/"><div class="icon">&#xf200;</div>About</a>
-			<a href="Gallery/"><div class="icon">&#xf195;</div>Gallery</a>
-			<a href="Sponsors/"><div class="icon">&#xf1fc;</div>Sponsors</a>
-			<a href="Links/" class="active"><div class="icon">&#xf165;</div>Links</a>
+			<a href="./" class="home active fi-home"><!-- Home --></a>
+			<a href="./TeamHub/" class="fi-results-demographics"> Team Hub </a>
+			<a href="./Calendars" class="fi-calendar"> Calendar </a>
+			<a href="./About/" class="fi-torsos-all"> About </a>
+			<a href="./Gallery/" class="fi-photo"> Gallery </a>
+			<a href="./Sponsors/" class="fi-torso-business"> Sponsors </a>
+			<a href="./Links/" class="fi-link"> Links </a>
 		</nav>
 
 		<article>
 			<p> Want to follow us on social media and see what we're up to? Well, now you can! </p>
-			
-			<table>
-			<tr>
-				<td>
-					<a href="https://www.facebook.com/frc5048">
-						<div class="icon">&#xf1c4;</div>
-					</a>
-				</td>
-				<td width="100%">
-					<a href="https://www.facebook.com/frc5048">
-						<b>Facebook</b>
-					</a><br />
-					/frc5048
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<a href="https://twitter.com/spartronics5048">
-						<div class="icon">&#xf1e4;</div>
-					</a>
-				</td>
-				<td>
-					<a href="https://twitter.com/spartronics5048">
-						<b>Twitter</b>
-					</a><br />
-					@spartronics5048 
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<a href="https://www.youtube.com/channel/UCkypfmzeK0-DOXyikHgeP6Q">
-					<div class="icon">&#xf1ea;</div>
-					</a>
-				</td>
-				<td>
-					<a href="https://www.youtube.com/channel/UCkypfmzeK0-DOXyikHgeP6Q">
-						<b>Youtube</b>
-					</a><br />
-					Spartronics 5048
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<a href="mailto:spartronics01@gmail.com">
-						<div class="icon">&#xf16d;</div>
-					</a>
-				</td>
-				<td>
-					<a href="mailto:spartronics01@gmail.com">
-						<b>E-Mail</b>
-					</a><br />
-					spartronics01@gmail.com
-				</td>
-			</tr>
-			</table>
+			<p class="link-container">
+				<span class="link-item">
+					<span class="fi-social-facebook"></span>
+					<a href="https://www.facebook.com/frc5048">Facebook</a> /frc5048
+				</span>
+				
+				<span class="link-item">
+					<span class="fi-social-twitter"></span>
+					<a href="https://twitter.com/spartronics5048">Twitter</a> @spartronics5048
+				</span>
+				
+				<span class="link-item">
+					<span class="fi-social-youtube"></span>
+					<a href="https://www.youtube.com/channel/UCkypfmzeK0-DOXyikHgeP6Q">YouTube</a> Spartronics5048
+				</span>
+				
+				<span class="link-item">
+					<span class="fi-mail"></span>
+					<a href="mailto:spartronics01@gmail.com">Email</a> spartronics01@gmail.com
+				</span>
+			</p>
 			
 			<hr />
+			
 			<p> Here's some of our favorite and some of the most useful FRC-related places on the web. </p>
-			<table>
-			<tr>
-				<td>
-					<a href="http://usfirst.org">
-						<img src="images/links/FIRST.png" width='64' height='64'/>
-					</a>
-				</td>
-				<td>
-					<a href="http://usfirst.org">
-						<b>FIRST</b>
-					</a><br />
+			
+			<p class="link-container">
+				<span class="link-item">
+					<img src="images/links/FIRST.png" width='64' height='64'/>
+					<a href="http://usfirst.org">FIRST</a>
 					The official FIRST site. Go here for the latest FRC news and events.
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<a href="http://firstinmichigan.org">
-						<img src="images/links/FIRST_MI.png" width='64' height='64'/>
-					</a>
-				</td>
-				<td>
-					<a href="http://firstinmichigan.org">
-						<b>FIRST in Michigan</b>
-					</a><br />
+				</span>
+				
+				<span class="link-item">
+					<img src="images/links/FIRST_MI.png" width='64' height='64'/>
+					<a href="http://firstinmichigan.org">FIRST in Michigan</a>
 					The official FIRST site for Michigan. Go here for competition schedules, rankings, team lists, the works.
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<a href="http://www.chiefdelphi.com/forums/portal.php">
-						<img src="images/links/cdlogo.png" width='64' height='64'/>
-					</a>
-				</td>
-				<td>
-					<a href="http://www.chiefdelphi.com/forums/portal.php">
-						<b>Chief Delphi</b>
-					</a><br />
+				</span>
+				
+				<span class="link-item">
+					<img src="images/links/cdlogo.png" width='64' height='64'/>
+					<a href="http://www.chiefdelphi.com/forums/portal.php">Chief Delphi</a>
 					The unofficial FRC forum. Got a question? Go here.
-				</td>
-			</tr>
+				</span>
+				
+				<span class="link-item">
+					<img src="images/links/bluealliance.png" width='64' height='64'/>
+					<a href="http://www.chiefdelphi.com/forums/portal.php">The Blue Alliance</a>
+					The largest database of FRC competition results and recordings, updated nearly live during matches.
+				</span>
+				
+			</p>
 			
+			<!--		
 			<tr>
 				<td>
 					<a href="http://www.thebluealliance.com/">
@@ -158,7 +127,7 @@
 					The FRC subreddit. A great place for more casual FRC discussion.
 				</td>
 			</tr>
-			</table>
+			</table>-->
 			
 		</article>
 	</body>
