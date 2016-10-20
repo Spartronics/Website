@@ -9,23 +9,15 @@
 		<script src="scripts/gallery.js"></script>
 		<script>
 		window.onload = function(){ //Don't start anything until the body is ready
-			var Paths = [
-				/*{
-					id: "btn2014",
-					gallery: "images/gallery/2014.json",
-					image: "images/gallery/2014/"
-				},*/
-				{
-					id: "btn2015",
-					gallery: "images/gallery/2015.json",
-					image: "images/gallery/2015/"
-				}
-			];
+			Gallery1 = new Gallery(
+				"viewer1",                	//ID of div containing large image
+				"select1",                  //ID of div containing thumbnails
+				null,                     	//Optional array of different gallery-image groups
+				"images/gallery/2015.json",	//path to JSON file containing gallery data
+				"images/gallery/2015/"      //folder containing images
+			);
 			
-			Gallery1 = new Gallery("viewer1", "select1", Paths);
-			
-			Gallery1.ChangePaths(Paths[0].gallery, Paths[0].image);
-			InitSelectButtons(Paths, Gallery1);
+			// See Git version history (at https://github.com/Spartronics/Website under the "Commits" button) for example on multiple galleries.
 		}
 		</script>
 	</head>
@@ -44,10 +36,13 @@
 			<a href="./Links/" class="fi-link"> Links </a>
 		</nav>
 		
-		<!--<nav class="subnav">
+		<!--
+		Navigation for multiple galleries (you may want this soon!)
+		<nav class="subnav">
 			<a href="javascript:void(0);" class="active" id="btn2014">2014</a>
 			<a href="javascript:void(0);" id="btn2015">2015</a>
-		</nav>-->
+		</nav>
+		-->
 
 		<article>
 			<div class="viewer viewtab" id="viewer1">

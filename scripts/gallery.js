@@ -1,5 +1,6 @@
 /*
 	Javascript Image Gallery
+	@license ‘magnet:?xt=urn:btih:5305d91886084f776adcf57509a648432709a7c7&dn=x11.txt’ Expat
 	
 	Description:
 		Simple javascript gallery that can either be controlled manually or
@@ -37,133 +38,149 @@
 			<div class="select selecttab" id="select1"></div>
 */
 
-//Generic gallery object.
+/* Generic gallery object. */
+
 function Gallery(ViewID, ThumbID, Paths, GalleryPath, ImagePath){
+    "use strict";
 	//Define variables
-	var CurrentPic; //The currently selected picture	
-	var GalleryData;	//Holds the titles and paths of all the pictures
+	this.CurrentPic = undefined; //The currently selected picture	
+	this.GalleryData = undefined;	//Holds the titles and paths of all the pictures
 	
-	this.ChangePaths = function(x, y){
-		GalleryPath = x;
-		ImagePath = y;
-		//Read the .JSON file containing titles and paths 
-		loadJSON(
-			function(response) {
-				GalleryData = JSON.parse(response);
-				InitViewerTags();
-				RefreshGallery();
-				PreloadImgs();
-				CurrentPic = 0;
-				UpdateViewer(CurrentPic);
-			},
-			GalleryPath
-		);
-	}
+	this.ViewID = ViewID;
+    this.ThumbID = ThumbID;
+    this.Paths = Paths;
+    this.GalleryPath = GalleryPath;
+    this.ImagePath = ImagePath;
+    
+    //Places all thumbnails, sets CurrentPic to 0 and updates the viewer.
+    this.RefreshGallery = function(){
+        //Do we need to replace thumbnails?
+        if (ThumbID){
+            //Wipe the existing thumbnails, if present.
+            var node = document.getElementById(ThumbID);
+            while (node.hasChildNodes()) {node.removeChild(node.lastChild);}
+            
+            //Now add the thumbnails back.
+            this.GalleryData.forEach(function(value, index, array){
+                var element = document.createElement("img");
+                element.id = "ThumbID." + index;
+                element.src = ImagePath + this.GalleryData[index].thumb;
+                element.addEventListener("click", function(e){
+                    //Get the number at the end of
+                    //the id of the element that was clicked on.
+                    this.CurrentPic = e.target.id.split(".").slice(-1)[0];
+                    this.UpdateViewer(this.CurrentPic);
+                }.bind(this), false);
+                document.getElementById(ThumbID).appendChild(element);
+            }.bind(this));
+        }
+        
+        //Update the current picture
+        this.CurrentPic = 0;
+        this.UpdateViewer(this.CurrentPic);
+    };
+
+    
+    //Create the <p>, <img> and <h2> tags.
+    this.InitViewerTags = function(){
+        //Get the preview element
+        var viewer = document.getElementById(this.ViewID);
+        //Remove anything that might exist.
+        while (viewer.hasChildNodes()) {viewer.removeChild(viewer.lastChild);}
+        //Create new elements
+        viewer.appendChild(document.createElement("h2"));
+        viewer.appendChild(document.createElement("img"));
+        viewer.appendChild(document.createElement("p"));
+    };
+    
+    //Updates the viewer to match the current image.
+    this.UpdateViewer = function (PicID){
+        //Get the preview element
+        var viewer = document.getElementById(this.ViewID);
+        
+        //Update image
+        viewer.getElementsByTagName("img")[0].setAttribute("src", this.ImagePath + this.GalleryData[PicID].img);
+        //Update title
+        viewer.getElementsByTagName("h2")[0].textContent = 
+            this.GalleryData[PicID].title || ""; //IE fix. Without this the title would literally be "undefined".
+        //Update description
+        viewer.getElementsByTagName("p")[0].textContent =
+            this.GalleryData[PicID].desc || "";
+    };
+    
+    // Preview bar scrolling functions
+    this.ScrollUp = function(){
+        this.UpdateViewer(this.CurrentPic);
+        if(this.CurrentPic !== this.GalleryData.length - 1){
+            this.CurrentPic += 1;
+        } else {
+            this.CurrentPic = 0;
+        }
+    };
+    
+    this.ScrollDown = function(){
+        this.UpdateViewer(this.CurrentPic);
+        if(this.CurrentPic !== 0){
+            this.CurrentPic -= 1;
+        } else {
+            this.CurrentPic = this.GalleryData.length - 1;
+        }
+    };
+    
+    this.PreloadImgs = function(){
+        var images = [];
+        for (var i = 0; i < this.GalleryData.length; i++) {
+            images[i] = new Image();
+            images[i].src = this.GalleryData[i].pic;
+        }
+    };
+    
+    this.ChangePaths = function(x, y){
+        this.GalleryPath = x;
+        this.ImagePath = y;
+        //Read the .JSON file containing titles and paths 
+        loadJSON(
+            function(response) {
+                this.GalleryData = JSON.parse(response);
+                this.InitViewerTags();
+                this.RefreshGallery();
+                this.PreloadImgs();
+                this.CurrentPic = 0;
+                this.UpdateViewer(this.CurrentPic);
+            }.bind(this),
+            this.GalleryPath
+        );
+    };
 	
-	if(GalleryPath && ImagePath){
-		this.ChangePaths(GalleryPath, ImagePath);
-	}
-	
-	//Places all thumbnails, sets CurrentPic to 0 and updates the viewer.
-	RefreshGallery = function(){
-		//Do we need to replace thumbnails?
-		if (ThumbID){
-			//Wipe the existing thumbnails, if present.
-			var node = document.getElementById(ThumbID);
-			while (node.hasChildNodes()) {node.removeChild(node.lastChild);}
-			
-			//Now add the thumbnails back.
-			GalleryData.forEach(function(value, index, array){
-				var element = document.createElement("img");
-				element.id = "ThumbID." + index;
-				element.src = ImagePath + GalleryData[index].thumb;
-				element.addEventListener("click", function(e){
-					//Get the number at the end of
-					//the id of the element that was clicked on.
-					CurrentPic = e.target.id.split(".").slice(-1)[0];
-					UpdateViewer(CurrentPic);
-				}.bind(this), false);
-				document.getElementById(ThumbID).appendChild(element);
-			});
-		}
-		
-		//Update the current picture
-		CurrentPic = 0;
-		UpdateViewer(CurrentPic);
-	}
-	
-	//Updates the viewer to match the current image.
-	UpdateViewer = function (PicID){
-		//Get the preview element
-		var viewer = document.getElementById(ViewID);
-		
-		//Update image
-		viewer.getElementsByTagName("img")[0].setAttribute("src", ImagePath + GalleryData[PicID].img);
-		//Update title
-		viewer.getElementsByTagName("h2")[0].textContent = 
-			GalleryData[PicID].title || ""; //IE fix. Without this the title would literally be "undefined".
-		//Update description
-		viewer.getElementsByTagName("p")[0].textContent =
-			GalleryData[PicID].desc || "";
-	};
-	
-	this.ScrollUp = function(){
-			UpdateViewer(CurrentPic);
-			if(CurrentPic != GalleryData.length - 1){
-				CurrentPic += 1;
-			} else {CurrentPic = 0;}
-	}
-	
-	this.ScrollDown = function(){
-			UpdateViewer(CurrentPic);
-			if(CurrentPic != 0){
-				CurrentPic -= 1;
-			} else {CurrentPic = GalleryData.length - 1;}
-	}
-	
-	//Create the <p>, <img> and <h2> tags.
-	function InitViewerTags(){
-		//Get the preview element
-		var viewer = document.getElementById(ViewID);
-		//Remove anything that might exist.
-		while (viewer.hasChildNodes()) {viewer.removeChild(viewer.lastChild);}
-		//Create new elements
-		viewer.appendChild(document.createElement("h2"));
-		viewer.appendChild(document.createElement("img"));
-		viewer.appendChild(document.createElement("p"));
-	}
-	
-	function PreloadImgs(){
-		var images = [];
-		for (i = 0; i < GalleryData.length; i++) {
-			images[i] = new Image();
-			images[i].src = GalleryData[i].pic;
-		}
-	}
+    if(this.GalleryPath && this.ImagePath){
+        this.ChangePaths(GalleryPath, ImagePath);
+    }
 }
 
+/* End Gallery object */
+
 function loadJSON(callback, URL) {
-	if(window.XDomainRequest){
-		var xdr = new XDomainRequest();
-	} else {
-		var xobj = new XMLHttpRequest();
-	}
-	if (xobj.overrideMimeType){xobj.overrideMimeType("application/json")};
-	xobj.open('GET', URL, true);
-	xobj.onreadystatechange = function () {
-		if (xobj.readyState == 4 && xobj.status == "200") {
-			// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-			callback(xobj.responseText);
-		}
-	};
-	xobj.send(null);  
+    "use strict";
+    var xobj = new XMLHttpRequest(); // Only works with IE10+
+    if (xobj.overrideMimeType){xobj.overrideMimeType("application/json");}
+    xobj.open('GET', URL, true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);  
 }
 
 function InitSelectButtons(Paths, GalleryID){
+    "use strict";
 	//I'm sorry. --Charles Arthur Thomas Rickman IV
+    console.log(Paths);
 	
 	Paths.forEach(function(value, i, arr){
-		element = document.getElementById(value.id);
+        console.log(value);
+		var element = document.getElementById(value.id);
 		console.log(element);
 		
 		element.addEventListener("click", function(e){
@@ -185,7 +202,7 @@ function InitSelectButtons(Paths, GalleryID){
 			e.target.setAttribute("class", e.target.getAttribute("class") + "active");
 			
 			//Now we can finally refresh the gallery.
-			Gallery1.ChangePaths(Paths[i].gallery, Paths[i].image);
+			this.ChangePaths(Paths[i].gallery, Paths[i].image);
 		}.bind(this), false);
 	});
 }
