@@ -1,16 +1,18 @@
 # Spartronics5048.com Github Repository
 
-This is the full contents of spartronics5048.com. Team members feel free to edit this site through here; it will be automatically synced with the web server on the hour. Outsiders can add suggestions via pull request, but keep in mind that there's a good chance we'll reject it if it isn't up to our snuff.
+This is the full contents of spartronics5048.com. Team members can feel free to edit this site through here; it will be automatically synced with the web server. Outsiders can add suggestions via pull request, but keep in mind that there's a good chance we'll reject it if it isn't up to our snuff.
 
-All material, unless otherwise stated, is under copyright of their respective creators. (We may change this in the future to be Creative Commons or the like; it's something we've gotta discuss.)
+**NEW!** We're using GitHub Pages as our web host. This allows us to use the [Jekyll webpage generator](https://jekyllrb.com/), which makes everything a lot easier to edit. (If needed, we can move from Jekyll to any other system in the future.)
+
+All material, unless otherwise stated, is under copyright of their respective creators unless otherwise stated.
 
 ##Editing
-#Editing HTML
+#Editing Posts
 It's simple.
 
 1. Go to https://github.com/Spartronics/Website
 2. Go to the file you want to edit
-3. Edit that file using the text editor on the site. If you need to edit it offline, follow the instructions for Viewing Offline.
+3. Edit that file using the text editor on the site.
 4. Save your edits. Keep editing other files if you need.
 5. Once done, press Commit and add a comment.
 
@@ -25,16 +27,13 @@ Also simple.
 
 ##Viewing Offline
 
-Due to some weird Javascript and orgainzational stuff going on, you'll probably want to run a web server on your computer and view it from that. Thankfully, that is a stupidly easy process.
+**You should only need to do this if you're editing the styles or other low-level stuff. (You probably won't do this.)** Windows users will need to use "BASH on Windows", while macOS and Linux users can just use their terminal program. You will also need [Ruby](https://www.ruby-lang.org/en/) installed. (Windows users should install 
 
-1. Download the site's contents as a zip from the Github page
-1. Install Python 3.x from http://python.org/downloads/
-2. Open a Command Prompt window and use 'dir' and 'cd' to navigate to where the website is located.
-3. Run the command 'python -m http.server'. This will start python's built in web server.
-4. Open a web browser and navigate to 'http://localhost:8000'. The website will appear.
+1. Navigate to a folder you want to save the site to (using `cd`)
+2. Run `git clone https://github.com/Spartronics/spartronics.github.io`
+3. Continue following the steps on https://jekyllrb.com/docs/quickstart/
 
 ##Content Guidelines
-We won't take garbage. That being said as of right now we don't have many standards.
 
 ###Text
 * Use proper grammar.
@@ -48,7 +47,7 @@ We won't take garbage. That being said as of right now we don't have many standa
 * Keep all images in the /images directory, under a subdirectory that describes the page the image is to be used on.
 
 ###Videos
-* DO NOT COMMIT VIDEOS TO THIS REPOSITORY. Upload them to Youtube and either embed it or place it's link in the gallery JSON.
+* DO NOT ADD VIDEOS TO THIS REPOSITORY. Upload them to Youtube and either embed it or place it's link in the gallery JSON.
 
 ###HTML
 * Make sure the page validates on http://validator.w3.org. Failure to validate will cause the page to not work on some browsers, which will be bad.
@@ -58,13 +57,5 @@ We won't take garbage. That being said as of right now we don't have many standa
 * Keep any visual information in CSS, preferably in 'style.css' or the STYLE tag at the top of the page.
 * Keep HTML as a description of the contents of the document, not how it looks.
 * If creating a new page, use the templates provided in /templates.
-
-###CSS
-Don't edit style.css unless everyone agrees it's okay to do so. Because this file effects every site on the page, simply altering the colors will alter the entire website. If you need to add a special element to a page though, feel free to use CSS within the page however you feel.
-
-###Javascript
-Be extremely careful editing the gallery JS. It could break very easily, and I'll admit it's not the most well-documented thing in the world.
-
-Do not include any other Javascript unless it is absolutely vital to the operation of the page. And no, jQuery animations are not vital. Use CSS for that kind of stuff.
 
 These guidelines are subject to change.
