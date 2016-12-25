@@ -1,0 +1,33 @@
+<script src="scripts/gallery.js"></script>
+
+<script>
+"use strict";
+window.onload = function(){
+
+    var Paths = [
+        {
+            id: "btn2014", //ID of HTML object to be clicked on to change galleries
+            gallery: "images/gallery/2014.json", //Location of gallery descriptor
+            image: "images/gallery/2014/" //Location of images
+        },
+        {
+            id: "btn2015",
+            gallery: "images/gallery/2015.json",
+            image: "images/gallery/2014/"
+        }
+        //Continue as needed
+    ];
+    
+    Gallery1 = new Gallery(
+        "viewer1", //ID of HTML div to display pictures in.
+        "select1", //ID of HTML div to show thmubnails in.
+        Paths //Variable where picture paths are stored. (Defined above.)
+    );
+    
+    //Set the initial gallery contents to the first gallery.
+    Gallery1.ChangePaths(Paths[0].gallery, Paths[0].image);
+    
+    //Make the gallery switch buttons defined in Paths work.
+    InitSelectButtons(Paths, Gallery1);
+}
+</script>

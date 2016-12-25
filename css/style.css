@@ -1,11 +1,11 @@
-/* Foundations Icon Font */
-@import url("fonts/foundation/foundation-icons.css");
+/* Foundations Icon Font descriptors */
+@import url("../fonts/foundation/foundation-icons.css");
 
 /* Orbitron Bold 700*/
 @font-face {
 	font-family: 'Orbitron';
-	src: url("fonts/orbitron/orbitron.woff2") format('woff2');
-	src: url("fonts/orbitron/orbitron.woff") format('woff');
+	src: url("../fonts/orbitron/orbitron.woff2") format('woff2');
+	src: url("../fonts/orbitron/orbitron.woff") format('woff');
 	font-style: normal;
 	font-weight: 700;
 }
@@ -19,15 +19,7 @@ body {
 	font-family: "Trebuchet MS", sans-serif;
 	padding: 0;
 	margin: 0;
-	/*background: #D0B690;
-	background: repeating-linear-gradient(
-	  90deg,
-	  #D0B690 0vw,
-	  #D0B690 1vw,
-	  #A98B61 1vw,
-	  #A98B61 2vw
-	);*/
-	background: url("images/steel-pattern.png");
+	background: url("../images/steel-pattern.png");
 	display: flex;
 	flex-direction: column;
 }
@@ -37,7 +29,6 @@ body > * {
 }
 
 header{
-/*	background: #42586E;*/
 	background: #292929;
 	color: white;
 	text-align: center;
@@ -86,7 +77,6 @@ nav a {
 }
 
 nav a.active {
-	/*box-shadow: 0 0 3px 3px white;*/
 	background: white;
 	color: #292929;
 }
