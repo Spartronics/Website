@@ -1,0 +1,17 @@
+<nav>
+    {% assign urls = include.urls | split: ", " %}
+    {% assign names = {{include.names}} | split: ", " %}
+    {% assign icons = {{include.icons}} | split: ", " %}
+    {% assign i = 0 %}
+
+    {% for url in urls %}
+        {% if url == page.url %}
+        <a href="{{ url }}" class="active {{ icons[i] }}"> {{names[i]}} </a>
+        {% else %}
+        <a href="{{ url }}" class="{{ icons[i] }}"> {{names[i]}} </a>
+        {% endif %}
+        
+        {% assign i = i | plus: 1 %}
+    {% endfor %}
+</nav>
+    

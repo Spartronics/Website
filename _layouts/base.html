@@ -16,17 +16,16 @@
 			<h1>Spartronics</h1>
 			<p>FRC Team 5048 from Imlay City, MI</p>
 		</header>
-		<nav>
-			<a href="/" class="home fi-home"><!-- Home --></a>
-			<a href="/TeamHub/" class="active fi-results-demographics"> Team Hub </a>
-			<!-- On the tab corresponding with the current page, add the class "active". This makes the tab white. -->
+		<!--<nav>
+			<a href="/" class="home fi-home"></a>
+			<a href="/TeamHub/" class="active fi-results-demographics"> Team Hub </a>>
 			<a href="/Calendars" class="fi-calendar"> Calendar </a>
 			<a href="/About/" class="fi-torsos-all"> About </a>
 			<a href="/Gallery/" class="fi-photo"> Gallery </a>
 			<a href="/Sponsors/" class="fi-torso-business"> Sponsors </a>
 			<a href="/Links/" class="fi-link"> Links </a>
-		</nav>
-
+		</nav>-->
+		{% include nav.html urls="/, /TeamHub/, /Calendars/, /About/, /Gallery/, /Sponsors/, /Links/" names="Home, Team Hub, Calendar, About, Gallery, Sponsors, Links" icons="fi-home, fi-results-demographics, fi-calendar, fi-torsos-all, fi-photo, fi-torso-business, fi-link" %}
 		<article>
 			{{ content }}
 		</article>
