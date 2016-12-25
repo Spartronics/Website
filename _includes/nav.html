@@ -5,13 +5,18 @@
     {% assign i = 0 %}
 
     {% for url in urls %}
-        {% if url == page.url %}
+        {% if url == "/" and page.url == "/" %}
+        <a href="/" class="active home fi-home"></a>
+        {% elsif url == "/" %}
+        <a href="/" class="home fi-home"></a>
+        {% elsif page.url contains url %}
         <a href="{{ url }}" class="active {{ icons[i] }}"> {{names[i]}} </a>
         {% else %}
         <a href="{{ url }}" class="{{ icons[i] }}"> {{names[i]}} </a>
         {% endif %}
         
         {% assign i = i | plus: 1 %}
+        
     {% endfor %}
 </nav>
     
