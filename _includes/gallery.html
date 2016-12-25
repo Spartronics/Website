@@ -1,33 +1,73 @@
+<link href="css/gallery.css" rel="stylesheet" />
 <script src="scripts/gallery.js"></script>
 
 <script>
-"use strict";
 window.onload = function(){
 
-    var Paths = [
+    // Create gallery path descriptors
+{% assign viewcount = 0 %}
+{% assign galcount = 0 %}
+
+{% for viewer in page.viewers %}
+    var Path{{ viewcount }} = [
+    {% for gallery in viewer.galleries %}
         {
-            id: "btn2014", //ID of HTML object to be clicked on to change galleries
-            gallery: "images/gallery/2014.json", //Location of gallery descriptor
-            image: "images/gallery/2014/" //Location of images
-        },
-        {
-            id: "btn2015",
-            gallery: "images/gallery/2015.json",
-            image: "images/gallery/2014/"
-        }
-        //Continue as needed
+            {% if viewer.buttons %}
+            id: "btn{{ galcount }}", //ID of HTML object to be clicked on to change galleries
+            {% endif %}
+            gallery: "{{ gallery.path }}", //Location of gallery descriptor
+            image: "{{ gallery.images }}" //Location of images
+        } 
+        //{ unless gallery == viewer.last }
+         //   ,
+        //{ endunless }
+        {% capture null %}{% increment galcount %}{% endcapture %}
+    {% endfor %}
+    {% capture null %}{% increment viewcount %}{% endcapture %}
     ];
+{% endfor %}
     
-    Gallery1 = new Gallery(
-        "viewer1", //ID of HTML div to display pictures in.
-        "select1", //ID of HTML div to show thmubnails in.
-        Paths //Variable where picture paths are stored. (Defined above.)
+    // Create gallery objects
+{% assign viewcount = 0 %}
+{% for viewer in page.viewers %}
+    // Using implicit global here
+    Gallery{{ viewcount }} = new Gallery(
+        "viewer{{ viewcount }}", //ID of HTML div to display pictures in.
+        {% if viewer.thumbnails %}
+        "select{{ viewcount }}", //ID of HTML div to show thumbnails in.
+        {% else %} null, {% endif %}
+        Path{{ viewcount }} //Variable where picture paths are stored. (Defined above.)
     );
     
-    //Set the initial gallery contents to the first gallery.
-    Gallery1.ChangePaths(Paths[0].gallery, Paths[0].image);
+    // Set the initial gallery contents to the first gallery.
+    Gallery{{ viewcount }}.ChangePaths(Path{{ viewcount }}[0].gallery, Path{{ viewcount }}[0].image);
     
-    //Make the gallery switch buttons defined in Paths work.
-    InitSelectButtons(Paths, Gallery1);
+    // Make the gallery switch buttons defined in Paths work.
+    //InitSelectButtons(Path{{ viewcount }}, Gallery{{ viewcount }});
+    
+    // If needed, turn on autoscroll for gallery
+    {% for style in viewer.style %}
+        {% if style == "autoscroll" %}
+    setInterval("Gallery{{ viewcount }}.ScrollUp()", 5000);
+        {% endif %}
+    {% endfor %}
+{% endfor %}
 }
 </script>
+
+{% assign viewcount = 0 %}
+{% for viewer in page.viewers %}
+    <div class = "
+        viewer
+        {% if viewer.banner%} banner {% endif %}
+    " id = "viewer{{ viewcount }}"> </div>
+    
+    {% if viewer.thumbnails %}
+    <div class = "
+        select
+        {% for style in viewer.style %}
+        {{ style }}
+        {% endfor %}
+    " id = "viewer{{ viewcount }}"> </div>
+    {% endif %}
+{% endfor %}

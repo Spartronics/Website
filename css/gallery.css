@@ -1,0 +1,54 @@
+.viewer{
+	width: 100%;
+	max-height: 60vh;
+	padding: 10px 0;
+	text-indent: 0;
+	background: white;
+	color: white;
+	disply: flex;
+	justify-content: center;
+	flex-flow: columns;
+	overflow: auto;
+}
+
+.viewtab{
+	background: white;
+	color: black;
+}
+
+.viewer img{
+	max-height: 40vh;
+	max-width: 90vw;
+	padding: 0;
+}
+
+.viewer h2,
+.viewer p{
+	text-indent: 0;
+	text-align: center;
+}
+
+.select{
+	background: #0C2032;
+	max-width: 100%;
+	padding: 4px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center; 
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.selecttab{
+	background: #2C3E50;
+}
+
+.select img{
+	height: 64px;
+	padding: 4px;
+	display: inline;
+}
+
+.viewer.banner img{max-height: 30vh; max-width: 100%}
+.viewer.banner {padding: 0; margin: 0; height: auto; overflow: visible;}

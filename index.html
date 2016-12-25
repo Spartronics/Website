@@ -3,19 +3,21 @@ layout: base
 title: Home
 styles: 
     - sponsors.css
-gallery:
+viewers:
     -
-        style:
-            - autoscroll
-            - banner
-        galleryloc: images/home/list.json
-        viewer: 1
+        autoscroll: true
+        banner: true
+        galleries: 
+            -
+                name: "Home Banner"
+                path: "images/home/list.json"
+                images: "images/home/"
 ---
 {% include gallery.html %}
 {% include sponsors.html %}
 
-<p>Pardon the dust, moving to Jekyll!</p>
-<hr />
+<p class="alert">Pardon the dust, moving to Jekyll!</p>
+
 <p>Welcome to the homepage of FRC Team 5048, the Spartronics of Imlay City, MI.</p>
 <p>FRC is a yearly competition put on by FIRST, an organization founded in 1989
     <i>F</i>or <i>I</i>nspiration and <i>R</i>ecognition of <i>S</i>cience and <i>T</i>echnology.
