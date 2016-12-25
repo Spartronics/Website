@@ -13,8 +13,6 @@ viewers:
 {% include gallery.html %}
 {% include sponsors.html %}
 
-<p class="alert">Pardon the dust, moving to Jekyll!</p>
-
 Welcome to the homepage of FRC Team 5048, the Spartronics of Imlay City, MI.
 
 FRC, the FIRST Robotics Competition, is a yearly competition with teams competing from all around the globe. FIRST, founded in 1989 by Dean Kamen and Woodie Flowers, is a non-profit organization that stands *F*or *I*nspiration and *R*ecognition of *S*cience and *T*echnology.
