@@ -1,5 +1,4 @@
 ---
-layout: base
 title: Sponsors
 ---
 We could not exist without our sponsors. Thank you to the following:
