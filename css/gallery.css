@@ -26,6 +26,7 @@
 .viewer p{
 	text-indent: 0;
 	text-align: center;
+    color: black;
 }
 
 .select{
@@ -50,5 +51,14 @@
 	display: inline;
 }
 
-.viewer.banner img{max-height: 30vh; max-width: 100%}
-.viewer.banner {padding: 0; margin: 0; height: auto; overflow: visible;}
+.viewer.banner img {
+    max-height: 30vh; 
+    max-width: 100%
+}
+.viewer.ban
+ner {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    overflow: visible;
+}

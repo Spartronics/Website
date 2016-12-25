@@ -9,7 +9,7 @@
 		multiple galleries in one space.
 	
 	License:
-		Copyright © 2015 Aaron Hancock
+		Copyright © 2015-2016 Aaron Hancock
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -38,8 +38,7 @@
 			<div class="select selecttab" id="select1"></div>
 */
 
-/* Generic gallery object. */
-
+// Generic gallery object.
 function Gallery(ViewID, ThumbID, Paths, GalleryPath, ImagePath){
     "use strict";
 	//Define variables
@@ -55,7 +54,7 @@ function Gallery(ViewID, ThumbID, Paths, GalleryPath, ImagePath){
     //Places all thumbnails, sets CurrentPic to 0 and updates the viewer.
     this.RefreshGallery = function(){
         //Do we need to replace thumbnails?
-        if (ThumbID){
+        if (this.ThumbID){
             //Wipe the existing thumbnails, if present.
             var node = document.getElementById(ThumbID);
             while (node.hasChildNodes()) {node.removeChild(node.lastChild);}
@@ -64,14 +63,14 @@ function Gallery(ViewID, ThumbID, Paths, GalleryPath, ImagePath){
             this.GalleryData.forEach(function(value, index, array){
                 var element = document.createElement("img");
                 element.id = "ThumbID." + index;
-                element.src = ImagePath + this.GalleryData[index].thumb;
+                element.src = this.ImagePath + this.GalleryData[index].thumb;
                 element.addEventListener("click", function(e){
                     //Get the number at the end of
                     //the id of the element that was clicked on.
                     this.CurrentPic = e.target.id.split(".").slice(-1)[0];
                     this.UpdateViewer(this.CurrentPic);
                 }.bind(this), false);
-                document.getElementById(ThumbID).appendChild(element);
+                document.getElementById(this.ThumbID).appendChild(element);
             }.bind(this));
         }
         
@@ -175,25 +174,25 @@ function loadJSON(callback, URL) {
 
 function InitSelectButtons(Paths, GalleryID){
     "use strict";
-	//I'm sorry. --Charles Arthur Thomas Rickman IV
-    console.log(Paths);
+	// I'm sorry. -- Charles Arthur Thomas Rickman IV
+    //console.log(Paths);
 	
 	Paths.forEach(function(value, i, arr){
-        console.log(value);
+        //console.log(value);
 		var element = document.getElementById(value.id);
-		console.log(element);
+		//console.log(element);
 		
 		element.addEventListener("click", function(e){
 			
-			//Mark all buttons in the same div as inactive.
+			// Mark all buttons in the same div as inactive.
 			
-			[].slice.call( //HTMLCollection to Array
+			[].slice.call( // HTMLCollection to Array
 				e.target.parentNode.children //Siblings of button
 			).forEach(function(value, i, arr){ //For each button
 				value.setAttribute("class",
 					(value.getAttribute("class") && //Check if class exists
 						value.getAttribute("class").replace("active","") //Remove "active" from class
-					) || "" //If class is empty, set it to "" to prevent errors.
+					) || "" // If class is empty, set it to "" to prevent errors.
 				);
 			});
 			
@@ -206,3 +205,5 @@ function InitSelectButtons(Paths, GalleryID){
 		}.bind(this), false);
 	});
 }
+
+// @license-end

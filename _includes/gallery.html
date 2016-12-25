@@ -1,5 +1,6 @@
-<link href="css/gallery.css" rel="stylesheet" />
-<script src="scripts/gallery.js"></script>
+<!-- Here be dragons -->
+<link href="/css/gallery.css" rel="stylesheet" />
+<script src="/scripts/gallery.js"></script>
 
 <script>
 window.onload = function(){
@@ -17,10 +18,7 @@ window.onload = function(){
             {% endif %}
             gallery: "{{ gallery.path }}", //Location of gallery descriptor
             image: "{{ gallery.images }}" //Location of images
-        } 
-        //{ unless gallery == viewer.last }
-         //   ,
-        //{ endunless }
+        } {% unless gallery == viewer.galleries.last %} , {% endunless %}
         {% capture null %}{% increment galcount %}{% endcapture %}
     {% endfor %}
     {% capture null %}{% increment viewcount %}{% endcapture %}
@@ -57,17 +55,17 @@ window.onload = function(){
 
 {% assign viewcount = 0 %}
 {% for viewer in page.viewers %}
-    <div class = "
-        viewer
-        {% if viewer.banner%} banner {% endif %}
-    " id = "viewer{{ viewcount }}"> </div>
-    
-    {% if viewer.thumbnails %}
-    <div class = "
-        select
-        {% for style in viewer.style %}
-        {{ style }}
-        {% endfor %}
-    " id = "viewer{{ viewcount }}"> </div>
+<div class = "
+    viewer
+    {% if viewer.banner%} banner {% endif %}
+" id = "viewer{{ viewcount }}"> </div>
+
+{% if viewer.thumbnails %}
+<div class = "
+    select
+    {% for style in viewer.style %}
+    {{ style }}
+    {% endfor %}
+" id = "select{{ viewcount }}"> </div>
     {% endif %}
 {% endfor %}
