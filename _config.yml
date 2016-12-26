@@ -8,6 +8,17 @@ prose:
         rooturl: "/"
         siteurl: "http://spartronics5048.com"
         media: "/images/"
+        ignore:
+                - ".gitignore"
+                - "CNAME"
+                - "README.md"
+                - "_config.ym;"
+                - "_include/"
+                - "_layouts/"
+                - "scripts/"
+                - "css/"
+                - "About/index.html"
+                - "TeamHub/index.html"
         metadata:
                 /:
                         - name: "title"
