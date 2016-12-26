@@ -1,29 +1,30 @@
- defaults:
+defaults:
     -
         scope:
             path: ""
         values:
             layout: "base"
 prose:
-        rooturl: "/"
-        siteurl: "http://spartronics5048.com"
-        media: "images"
-        ignore:
-                - .gitignore
-                - CNAME
-                - README.md
-                - _config.yml
-                - _include/
-                - _layouts/
-                - scripts/
-                - css/
-                - About/index.html
-                - TeamHub/index.html
-        metadata:
-                /:
-                        - name: "title"
-                          field:
-                                  element: "texr"
-                                  label: "Title"
-                                  value: ""
-
+    rooturl: ""
+    siteurl: "http://spartronics5048.com"
+    media: "images"
+    ignore: 
+        - '.gitignore'
+        - 'CNAME'
+        - 'README.md'
+        - '_config.yml'
+        - '_includes'
+        - '_layouts'
+        - 'scripts'
+        - 'css'
+        - 'About/index.html'
+        - 'TeamHub/index.html'
+        - 'fonts'
+                
+    metadata:
+        /:
+          - name: "title"
+            field:
+                element: "text"
+                label: "Title"
+                value: ""
