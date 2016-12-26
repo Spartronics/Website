@@ -1,7 +1,7 @@
 ---
 title: Events
 ---
-{% include th_nav.html %}
+{% include about-nav.html %}
 
 ## 2015 World Championships
 
