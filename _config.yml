@@ -4,3 +4,15 @@
             path: ""
         values:
             layout: "base"
+prose:
+        rooturl: "/"
+        siteurl: "http://spartronics5048.com"
+        media: "/images/"
+        metadata:
+                /:
+                        - name: "title"
+                          field:
+                                  element: "texr"
+                                  label: "Title"
+                                  value: ""
+
