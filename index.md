@@ -1,19 +1,22 @@
 ---
 title: Home
 viewers:
-    -
-        autoscroll: true
-        banner: true
-        galleries: 
-            -
-                name: "Home Banner"
-                path: "/images/home/list.json"
-                images: "/images/home/"
+  - autoscroll: true
+    banner: true
+    galleries:
+      - name: Home Banner
+        path: /images/home/list.json
+        images: /images/home/
+published: true
 ---
 {% include gallery.html %}
 {% include sponsors.html %}
 
 Welcome to the homepage of FRC Team 5048, the Spartronics of Imlay City, MI.
+
+We are currently working on a robot for the 2017 game, <a href="http://www.firstinspires.org/robotics/frc/game-and-season">FIRST SteamWorks.</a> We have until Feburary 21 at midnight.
+
+---
 
 FRC, the FIRST Robotics Competition, is a yearly competition with teams competing from all around the globe. FIRST, founded in 1989 by Dean Kamen and Woodie Flowers, is a non-profit organization that stands *F*or *I*nspiration and *R*ecognition of *S*cience and *T*echnology.
 
