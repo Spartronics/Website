@@ -200,27 +200,25 @@ hr {background-color: #dddddd; width: 80%; border: 1;}
     }
     
     nav {
-        justify-content: flex-end;
-        
-        background-image: url("../images/logo.svg");
+        /*background-image: url("../images/logo.svg");
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: 4pt, 0;
+        background-position: 4pt, 0;*/
         
-        text-align: right;
+        /*text-align: right;
         padding-left: 20%;
-        width: 80%;
+        width: 80%;*/
     }
     
     nav a {
         font-size: 20pt;
-        width: 180px;
+        width: 160px;
         border: #292929 1px solid;
         margin: 2px;
     }
     
     nav a.home {
-        width: 180px;
+        width: 160px;
     }
     
     nav a.home::after{
